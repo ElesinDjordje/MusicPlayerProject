@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>MusicPlayer - Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="/images/tabIcon.png">
+    
+    
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/styles/homePage/layout.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="/styles/homePage/player.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="/styles/homePage/sideMenu.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="/styles/homePage/mainSection.css"/>
+
+
+    <!-- font & icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/84489ec29b.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+      <!-- SIDEBAR -->
+      <div class="sideMenu">
+        <div class="homeSearch">
+          <ul>
+            <li class="homeOption">
+              <a href="/html/index.html">
+                <button><i class="fa-solid fa-house"></i></button>
+                <span>Home</span>
+              </a>
+            </li>
+            <li class="searchOption">
+              <a href="/html/search.html">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                <span>Search</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="playlists">
+          <p class="naslov">Your Playlists</p>
+          <div class="playlistsList">
+            <a href="/html/likedSongs.html">
+              <div class="playlistCard likedSongs">
+                <div class="playlistCardImgContr">
+                  <img src="https://misc.scdn.co/liked-songs/liked-songs-300.png" alt="">
+                </div>
+                <p>Liked Songs<br><span>Playlist</span></p>            
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN SECTION -->
+      <div class="mainPage changeColor">
+        <div class="headerSection">
+          <div class="leftHeader">
+            <button id="backIcon"><i class="fa-solid fa-angle-left"></i></button>
+          </div>
+          <div class="rightHeader">
+            <button id="notificationsIcon"><i class="fa-solid fa-bell"></i></button>
+            <button id="profileIcon"><img src="/images/profilePic.jpg" alt=""></button>
+          </div>
+        </div>
+        <h1>Browse</h1>
+        <div class="slidingSongsContr">
+          <div class="slidingHeader">
+            <p>Trending Songs</p>
+            <div class="leftRightControlsContr">
+              <button class="arrowLeft" data-left-arrow-btn="trendingSongs"><i class="fa-solid fa-arrow-left"></i></button>
+              <button class="arrowRight" data-right-arrow-btn="trendingSongs"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+
+          <!-- CONTAINER PESAMA -->
+          <div class="trendingSongsContr">
+            
+          </div>
+        </div>
+        <div class="slidingArtistsContr">
+          <div class="slidingHeader">
+            <p>Popular Artist</p>
+            <div class="leftRightControlsContr">
+              <button class="arrowLeft" data-left-arrow-btn="popularArtists"><i class="fa-solid fa-arrow-left"></i></button>
+              <button class="arrowRight" data-left-arrow-btn="popularArtist"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+          <div class="popularArtistsContr">
+            
+          </div>
+        </div>
+      </div>  
+      </div>
+
+        <!-- ARTISTS -->
+       
+    
+      <!-- BOTTOM PLAYER -->
+      <div class="bottomPlayer">
+        <!-- SONG INFO SECTION -->
+        <div class="songInfoContr">
+          <div>
+            <div class="imageContr">
+              <img id="songImg" src="" >
+            </div>
+            <div class="songInfo">
+              <p id="nazivPesme"></p>
+              <p id="izvodjac"></p>
+            </div>
+          </div>
+          <div class="likeContr">
+            <i class="fa-regular fa-heart" id="like"></i>
+          </div>
+        </div>
+        <!-- CONTROLS SECTION -->
+        <div class="controlsContr">
+          <div class="controls">
+            <button id="shuffle"><i class="fa-solid fa-shuffle"></i></button>
+            <button id="backward"><i class="fa-solid fa-backward-step"></i></button>
+            <button id="playPause"><i class="fa-solid fa-play"></i></button>
+            <button id="foreward"><i class="fa-solid fa-forward-step"></i></button>
+            <button id="repeat"><i class="fa-solid fa-repeat"></i></button>
+          </div>
+          <div class="barContr">
+            <div class="timestamps">
+              <p class="songTime currentTime">0:00</p>
+            </div>
+            <div class="progressBarFull">
+              <div class="progressBar">
+                <span></span>
+              </div>
+            </div>
+            <div class="timestamps">
+              <p class="songTime duration"></p>
+            </div>
+            <audio id="songAudio" src=""></audio>
+          </div>
+        </div>
+        <!-- RIGHT PLAYER SECTION -->
+        <div class="rightPlayerSection">
+          <div class="volumeContr">
+            <div class="volumeIconContr">
+              <i id="volumeIcon" class="fa-solid fa-volume-high"></i>
+            </div>
+            <div class="volumeBarFull">
+              <div class="volumeBar">
+                <span></span>
+              </div>
+            </div>
+          </div>
+          <div class="fullScreenContr">
+            <a href="/html/nowPlaying.html">
+              <i id="fullScreen" class="fa-solid fa-up-right-and-down-left-from-center"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.4.0/color-thief.umd.js" integrity="sha512-r2yd2GP87iHAsf2K+ARvu01VtR7Bs04la0geDLbFlB/38AruUbA5qfmtXwXx6FZBQGJRogiPtEqtfk/fnQfaYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/scripts/songsList.js"></script>
+    <script src="/scripts/home/bottomPlayer.js"></script>
+    <script src="/scripts/home/mainSection.js"></script>
+  </body>
+</html>

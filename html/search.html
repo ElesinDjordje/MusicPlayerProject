@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Music Player - Search</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+  <link rel="icon" type="image/png" href="/images/tabIcon.png">
+  <!-- styles -->
+  <link rel="stylesheet" type="text/css" media="screen" href="/styles/search/layoutSearch.css"/>
+  <link rel="stylesheet" type="text/css" media="screen" href="/styles/search/playerSearch.css"/>
+  <link rel="stylesheet" type="text/css" media="screen" href="/styles/search/sideMenuSearch.css"/>
+  <link rel="stylesheet" type="text/css" media="screen" href="/styles/search/mainSectionSearch.css"/>
+
+  <!-- font & icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/84489ec29b.js" crossorigin="anonymous"></script>  <script src='main.js'></script>
+</head>
+<body>
+  <header>
+    <!-- SIDEBAR -->
+    <div class="sideMenu">
+      <div class="homeSearch">
+        <ul>
+          <li class="homeOption">
+            <a href="/html/index.html">
+              <button><i class="fa-solid fa-house" aria-hidden="true"></i></button>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="searchOption">
+            <a href="/html/search.html">
+              <button><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
+              <span>Search</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="playlists">
+        <p class="naslov">Your Playlists</p>
+        <div class="playlistsList">
+          <a href="/html/likedSongs.html">
+            <div class="playlistCard likedSongs">
+              <div class="playlistCardImgContr">
+                <img src="https://misc.scdn.co/liked-songs/liked-songs-300.png" alt="">
+              </div>
+              <p>Liked Songs<br><span>Playlist</span></p>            
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN SECTION -->
+    <div class="mainPage changeColor" style="background: linear-gradient(rgb(51, 51, 51), rgb(19, 19, 19));">
+      <div class="headerSection">
+        <div class="leftHeader">
+          <button id="backIcon"><i class="fa-solid fa-angle-left"></i></button>
+        </div>
+        <div class="middleHeader">
+          <input id="searchInput" type="text" class="searchInput" placeholder="Search songs" autocomplete="off">
+          <button class="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="rightHeader">
+          <button id="notificationsIcon"><i class="fa-solid fa-bell"></i></button>
+          <button id="profileIcon"><img src="/images/profilePic.jpg" alt=""></button>
+        </div>
+      </div>
+      <div class="allSongCardsContr">
+
+      </div>
+
+    </div>  
+     
+  
+    <!-- BOTTOM PLAYER -->
+    <div class="bottomPlayer">
+      <!-- SONG INFO SECTION -->
+      <div class="songInfoContr">
+        <div>
+          <div class="imageContr">
+            <img id="songImg" src="https://i.scdn.co/image/ab67616d00001e024121faee8df82c526cbab2be" crossorigin="Anonymous">
+          </div>
+          <div class="songInfo">
+            <p id="nazivPesme">Billie Jean</p>
+            <p id="izvodjac">Michael Jackson</p>
+          </div>
+        </div>
+        <div class="likeContr">
+          <i class="fa-regular fa-heart" id="like" aria-hidden="true"></i>
+        </div>
+      </div>
+      <!-- CONTROLS SECTION -->
+      <div class="controlsContr">
+        <div class="controls">
+          <button id="shuffle" class="active"><i class="fa-solid fa-shuffle" aria-hidden="true"></i></button>
+          <button id="backward"><i class="fa-solid fa-backward-step" aria-hidden="true"></i></button>
+          <button id="playPause"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+          <button id="foreward"><i class="fa-solid fa-forward-step" aria-hidden="true"></i></button>
+          <button id="repeat"><i class="fa-solid fa-repeat" aria-hidden="true"></i></button>
+        </div>
+        <div class="barContr">
+          <div class="timestamps">
+            <p class="songTime currentTime">4:14</p>
+          </div>
+          <div class="progressBarFull">
+            <div class="progressBar" style="width: 86.0458%;">
+              <span></span>
+            </div>
+          </div>
+          <div class="timestamps">
+            <p class="songTime duration">4:55</p>
+          </div>
+          <audio id="songAudio" src="/music/Michael Jackson - Billie Jean (Official Video).mp3"></audio>
+        </div>
+      </div>
+      <!-- RIGHT PLAYER SECTION -->
+      <div class="rightPlayerSection">
+        <div class="volumeContr">
+          <div class="volumeIconContr">
+            <i id="volumeIcon" class="fa-solid fa-volume-low" aria-hidden="true"></i>
+          </div>
+          <div class="volumeBarFull">
+            <div class="volumeBar" style="width: 34.9206%;">
+              <span></span>
+            </div>
+          </div>
+        </div>
+        <div class="fullScreenContr">
+          <a href="/html/nowPlaying.html">
+            <i id="fullScreen" class="fa-solid fa-up-right-and-down-left-from-center" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.4.0/color-thief.umd.js" integrity="sha512-r2yd2GP87iHAsf2K+ARvu01VtR7Bs04la0geDLbFlB/38AruUbA5qfmtXwXx6FZBQGJRogiPtEqtfk/fnQfaYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/scripts/songsList.js"></script>
+  <script src="/scripts/search/bottomPlayerSearch.js"></script>
+  <script src="/scripts/search/mainSectionSearch.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>MusicPlayer - Now Playing</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="icon" type="image/png" href="/images/tabIcon.png">
+  
+  
+  <link rel='stylesheet' type='text/css' media='screen' href='/styles/nowPlaying.css'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/84489ec29b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logoContr">
+        <img id="logo" src="/images/tabIcon.png" alt="">
+      </div>
+      <a href="/html/index.html">
+        <button id="xmark"><i class="fa-solid fa-xmark"></i></button>
+      </a>
+    </div>
+    <div class="contentContr">
+      <div class="imageContr">
+        <img src="" id="songImage">
+      </div>
+      <div class="songHeader">
+        <div>
+          <p id="nazivPesme"></p>
+          <p id="izvodjac"></p>
+        </div>
+        <div>
+          <i class="fa-regular fa-heart" id="like"></i>
+        </div>
+      </div>
+      <div class="barContr">
+          <div class="progressBarFull">
+            <div class="progressBar">
+              <span></span>
+            </div>
+          </div>
+          <div class="timestamps">
+            <p class="songTime currentTime">0:00</p>
+            <p class="songTime duration"></p>
+          </div>
+          <audio id="songAudio" src=""></audio>
+      </div>
+      <div class="controls">
+        <button id="shuffle"><i class="fa-solid fa-shuffle"></i></button>
+        <button id="backward"><i class="fa-solid fa-backward-step"></i></button>
+        <button id="playPause"><i class="fa-solid fa-play"></i></button>
+        <button id="foreward"><i class="fa-solid fa-forward-step"></i></button>
+        <button id="repeat"><i class="fa-solid fa-repeat"></i></button>
+      </div>
+      <div class="volumeContr">
+        <div class="volumeIconContr">
+          <i id="volumeIcon" class="fa-solid fa-volume-high"></i>
+        </div>
+        <div class="volumeBarFull">
+          <div class="volumeBar">
+            <span></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.4.0/color-thief.umd.js" integrity="sha512-r2yd2GP87iHAsf2K+ARvu01VtR7Bs04la0geDLbFlB/38AruUbA5qfmtXwXx6FZBQGJRogiPtEqtfk/fnQfaYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/scripts/songsList.js"></script>
+  <script src='/scripts/nowPlaying.js'></script>
+</body>
+</html>

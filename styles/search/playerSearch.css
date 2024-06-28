@@ -1,0 +1,301 @@
+.bottomPlayer{
+  display: flex;
+  align-items: center;
+  padding: 10px 20px 20px 20px;
+}
+
+
+/* LEFT SECTION */
+.songInfoContr{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 35%;
+  height: 100%;
+  margin-bottom: 3px;
+  padding-right: 10px;
+}
+
+.songInfoContr div:first-of-type{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-right: 5px;
+}
+
+.songInfoContr .imageContr{
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+
+#songImg{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.songInfoContr .songInfo{
+  color: #fff;
+  font-weight: 500;
+  font-size: 15px;
+  margin-left: 10px;
+  overflow: hidden;
+}
+
+
+#izvodjac{
+  color: #9c9c9c;
+  font-size: 13px;
+  margin-top: 3px;
+  text-wrap: nowrap;
+  position: relative;
+}
+
+#izvodjac::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px; 
+  height: 100%;
+  background: linear-gradient(to right, rgba(18,18,18,0), rgb(0, 0, 0)); /* Adjust colors to match your background */
+  pointer-events: none;
+}
+
+
+
+/* MIDDLE SECTION */
+
+.controlsContr{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 45%;
+}
+
+.barContr{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.timestamps{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d9d9d9;
+  width: 10%;
+  font-size: 13.5px;
+  font-weight: 500;
+}
+.progressBarFull{
+  width: 80%;
+  height: 3px;
+  border-radius: 60px;
+  cursor: pointer;
+  background: #777777;
+/*   box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.2); */
+}
+
+.progressBar{
+  height: inherit;
+  border-radius: inherit;
+  background-color: #fff;
+  width: 0;
+  position: relative;
+}
+
+.progressBar::before{
+  content: "";
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -5px;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.progressBarFull:hover .progressBar::before{
+  opacity: 1;
+}
+
+.progressBarFull:hover .progressBar{
+  background: linear-gradient(to right, #1F51FF, #40E0D0 ) ;
+}
+
+
+.controls{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.controls button{
+  margin: 0 5%;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+}
+
+.controls button:first-of-type, button:last-of-type{
+  font-size: 12px;
+  width: 30px;
+  height: 30px;
+  transition: all 0.2s;
+  color: #d9d9d9;
+}
+
+.controls button:first-of-type:hover, button:last-of-type:hover{
+  color: #fff;
+}
+
+
+.controls button:first-of-type.active, button:last-of-type.active{
+  background-color: #e3e1e19f;
+  border-radius: 50%;
+  color: #fff;
+}
+
+#playPause{
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#playPause:hover{
+  scale: 1.1;
+}
+#playPause:active{
+  scale: 1;
+}
+
+#backward{
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #c8c8c8;
+  font-size: 20px;
+}
+#backward:hover{
+  scale: 1.1;
+  color: #fff;
+}
+#backward:active{
+  scale: 1;
+}
+
+#backward:disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#foreward{
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #c8c8c8;
+  font-size: 20px;
+}
+#foreward:hover{
+  scale: 1.1;
+  color: #fff;
+}
+#foreward:active{
+  scale: 1;
+}
+
+
+/* RIGHT SECTION */
+.rightPlayerSection{
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#like{
+  font-size: 20px;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.2s;
+}
+#like:active{
+  scale: 0.93;
+}    
+
+.volumeContr{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  margin-left: 10%;
+}
+
+.volumeBarFull{
+  width: 100%;
+  height: 3px;
+  border-radius: 60px;
+  cursor: pointer;
+  background: #777777;
+  margin: 0 12px;
+}
+
+.volumeBar{
+  height: inherit;
+  border-radius: inherit;
+  background-color: #fff;
+  position: relative;
+}
+
+.volumeBar::before{
+  content: "";
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -5px;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.volumeBarFull:hover .volumeBar::before{
+  opacity: 1;
+}
+
+.volumeBarFull:hover .volumeBar{
+  background: linear-gradient(to right, #1F51FF, #40E0D0 ) ;
+}
+
+#volumeIcon{
+  color: #fff;
+}
+
+
+
+.fullScreenContr{
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#fullScreen{
+  color: #fff;
+}
+
+

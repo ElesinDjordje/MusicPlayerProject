@@ -1,0 +1,342 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+/*   background: #252525; */
+} 
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: #6d6d6d; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #989898; 
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 15px;
+  position: relative;
+}
+
+.header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.header .logoContr{
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.logoContr #logo{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#xmark{
+  background: none;
+  border: none;
+  font-size: 25px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#xmark:hover{
+  scale: 1.1;
+}
+
+#xmark:active{
+  scale: 1;
+}
+
+.contentContr{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.imageContr{
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(51, 51, 51);
+  width: 24%;
+  padding-top: 24%;
+  border-radius: 10px;
+  box-shadow: 0 0 30px 0px rgba(164, 164, 164, 0.21);
+}
+
+@media (max-width: 1050px){
+  .imageContr{
+    width: 45vw;
+    padding-top: 45vw;
+  }
+}
+
+@media (max-width: 700px){
+  .imageContr{
+    width: 55vw;
+    padding-top: 55vw;
+  }
+}
+
+.imageContr img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} 
+
+.songHeader{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  padding: 0 15px;
+  margin: 40px 0 15px 0
+}
+
+.songHeader div p:first-of-type{
+  font-weight: 700;
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.songHeader div p:last-of-type{
+  font-weight: 500;
+  color: #fff;
+  margin-top: 5px;
+}
+
+#like{
+  font-size: 20px;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.2s;
+}
+#like:active{
+  scale: 0.93;
+}
+
+#playPause{
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#playPause:hover{
+  scale: 1.1;
+}
+#playPause:active{
+  scale: 1;
+}
+
+#backward{
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#backward:hover{
+  scale: 1.1;
+}
+#backward:active{
+  scale: 1;
+}
+
+#backward:disabled{
+  opacity: 0.7;
+}
+
+#foreward{
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#foreward:hover{
+  scale: 1.1;
+}
+#foreward:active{
+  scale: 1;
+}
+
+.barContr{
+  width: 80%;
+  
+}
+
+.timestamps{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  color: #fff;
+}
+.progressBarFull{
+  width: 100%;
+  height: 6px;
+  border-radius: 50px;
+  cursor: pointer;
+  background: #9f9f9f;
+/*   box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.2); */
+}
+
+.progressBar{
+  height: inherit;
+  border-radius: inherit;
+  width: 0;
+  background-color: #fff;
+  position: relative;
+}
+
+.progressBar::before{
+  content: "";
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: inherit;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -5px;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.progressBarFull:hover .progressBar::before{
+  opacity: 1;
+}
+
+
+.controls{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.controls button{
+  margin: 0 5%;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 40px;
+  width: 50px;
+  height: 50px;
+}
+
+.controls button:first-of-type, button:last-of-type{
+  font-size: 15px;
+  width: 30px;
+  height: 30px;
+  transition: all 0.2s;
+  color: #d9d9d9;
+}
+
+.controls button:first-of-type:hover, button:last-of-type:hover{
+  color: #fff;
+}
+
+
+.controls button:first-of-type.active, button:last-of-type.active{
+  background-color: #e3e1e19f;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.volumeContr{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 30%;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-right: auto;
+  padding-left: 10%;
+}
+
+.volumeBarFull{
+  width: 100%;
+  height: 5px;
+  border-radius: 60px;
+  cursor: pointer;
+  background: #9f9f9f;
+  margin: 0 12px;
+}
+
+.volumeBar{
+  height: inherit;
+  border-radius: inherit;
+  width: 0;
+  background-color: #fff;
+  position: relative;
+}
+
+.volumeBar::before{
+  content: "";
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -5px;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.volumeBarFull:hover .volumeBar::before{
+  opacity: 1;
+}
+
+/* .volumeBarFull:hover .volumeBar{
+  background: linear-gradient(to right, #1F51FF, #40E0D0 ) ;
+} */
+
+#volumeIcon{
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+ 
